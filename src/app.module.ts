@@ -1,9 +1,9 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
+import { APP_GUARD } from "@nestjs/core";
 import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
 
 import configuration from "@/config";
-import { APP_GUARD } from "@nestjs/core";
 import { HealthCheckModule } from "@/modules/healthCheck/healthCheck.module";
 
 @Module({

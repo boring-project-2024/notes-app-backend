@@ -1,9 +1,5 @@
 import { ConfigService } from "@nestjs/config";
-import {
-  HealthCheckResult,
-  HealthCheckService,
-  MicroserviceHealthIndicator,
-} from "@nestjs/terminus";
+import { HealthCheckResult, HealthCheckService, MicroserviceHealthIndicator } from "@nestjs/terminus";
 import { Test, TestingModule } from "@nestjs/testing";
 
 import { HealthCheckController } from "@/modules/healthCheck/healthCheck.controller";
@@ -27,9 +23,7 @@ describe("HealthCheckController", () => {
       ],
     }).compile();
 
-    healthCheckController = module.get<HealthCheckController>(
-      HealthCheckController,
-    );
+    healthCheckController = module.get<HealthCheckController>(HealthCheckController);
     healthService = module.get<HealthCheckService>(HealthCheckService);
   });
 

@@ -2,11 +2,7 @@ import { Controller, Get } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { TcpClientOptions, Transport } from "@nestjs/microservices";
 import { ApiTags } from "@nestjs/swagger";
-import {
-  HealthCheck,
-  HealthCheckService,
-  MicroserviceHealthIndicator,
-} from "@nestjs/terminus";
+import { HealthCheck, HealthCheckService, MicroserviceHealthIndicator } from "@nestjs/terminus";
 
 @ApiTags("health-check")
 @Controller("health-check")

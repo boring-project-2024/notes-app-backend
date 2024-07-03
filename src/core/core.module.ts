@@ -6,23 +6,15 @@ import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 export class CoreModule {
   static setupSecurity(app: INestApplication): void {
     app.enableCors();
-    new Logger("SecuritySetup").log(
-      "CORS and Helmet configurations have been applied.",
-    );
+    new Logger("SecuritySetup").log("CORS and Helmet configurations have been applied.");
   }
 
-  static setupSwagger(
-    app: INestApplication,
-    configService: ConfigService,
-  ): void {
+  static setupSwagger(app: INestApplication, configService: ConfigService): void {
     const environment = configService.get<string>("NODE_ENV");
     const logger = new Logger("SwaggerSetup");
 
     if (environment === "development") {
-      const url = configService.get<string>(
-        "HOST_URL",
-        "http://localhost:8080",
-      );
+      const url = configService.get<string>("HOST_URL", "http://localhost:8080");
 
       const config = new DocumentBuilder()
         .addBearerAuth()
